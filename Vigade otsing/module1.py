@@ -27,7 +27,10 @@ def arvud_loendis():
     print(s)
 
 def vahetus(a:int,b:int):
-    """
+    """Kui min suurem kui max,siis vahetame neid omavahel
+    :param int a:minimaalne arv,mis in suurem kui max
+    :param int b:maximaalne arv,mis on väiksem kui min
+    :rtype: int,int
     """
     abi=a
     a=b
@@ -35,12 +38,23 @@ def vahetus(a:int,b:int):
     return a,b
 
 def generaator(n:int,loend:list,a:int,b:int):
+    """Genereerib juhusliku arvu
+    :param list loend:список
+    :param int n:количество чисел
+    :param int a:минимальное число для генерации
+    :param int b:максимально число для генерации
+    :rtype: int
+    """
     for i in range (n):
         loend.append(randint(a,b))
     
 
 def jagamine(loend:list,p:list,n:list,nol:list):
-    """
+    """Делит значения в список
+    :param list p:список положительных чисел
+    :param list loend:список чисел
+    :param list n:список отрицательных чисел
+    :param list nol:список нулевых чисел
     :rtype list
     """
     for el in loend:
@@ -52,8 +66,9 @@ def jagamine(loend:list,p:list,n:list,nol:list):
             nol.append(el)
 
 def keskmine(loend):
-    """
-    :rtype int
+    """находит среднее положительное число
+    :param list loend:список чисел
+    :rtype int n:число введеное пользователем
     """
     n=len(loend)
     if n==0:
@@ -66,8 +81,10 @@ def keskmine(loend):
     return kesk
 
 def lisamine(loend:list,el:float):
-    """
-    :rtype float
+    """Добавляет список и структуру чисел
+    :rtype loend:список чисел
+    :rtype float el:
+    :rtype float sort: сортирует
     """
     loend.append(el)
     loend.sort()
